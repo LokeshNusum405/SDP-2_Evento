@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AdminLogin</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+	<link  href="{% static 'css/styles.css' %}" rel="stylesheet" type="text/css">
+
+
+</head>
+<body>
+<!-- bottom-bar  Starts-->
+<div class="bottom-bar">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <div class="logo">
+                        <a href="{% url 'login' %}">
+                            <img src="{% static 'images/logo.png' %}" style="border-radius : 5px" alt="Evento" height="50px" width="250px">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="search">
+                        <input type="text" placeholder="Search">
+                        <button class="btn-search"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+
+
+                <div class="col-md-3">
+                    <div class="user">
+
+                        <a href="{% url 'aboutus' %}" class="btn wishlist">
+                            <i class="fa fa-address-card"></i>
+                            <span>About Us</span>
+                        </a>
+
+                        <a href="{% url 'register' %}" class="btn wishlist">
+                            <i class="fa fa-user"></i>
+                            <span>Register</span>
+                        </a>
+                        <a href="{% url 'login' %}" class="btn cart">
+                            <i class="fa fa-user"></i>
+                            <span>Login</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bottom Bar End -->
+
+
+        <div class="topcorner" style="position:absolute; top:80px;right:0;">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert  {{ message.tags }} m-2" id="msg" role="alert" >
+                            <center>{{ message }}</center>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+        </div>
+
+<br>
+<div class="container h-100">
+	<div class="d-flex justify-content-center h-100">
+		<div class="user_card">
+				<div class="d-flex justify-content-center">
+					<h3 id="form-title">ADMIN LOGIN</h3>
+				</div>
+
+
+
+				<div class="d-flex justify-content-center form_container">
+					<form method="POST" action="">
+                        {% csrf_token%}
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" name="username" placeholder="Enter Username " class="form-control">
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+								<input type="password" name="password" placeholder="Enter Password" class="form-control" >
+						</div>
+
+							<div class="d-flex justify-content-center mt-3 login_container">
+				 				<input class="btn login_btn" type="submit" value="Login">
+				   			</div>
+					</form>
+
+				</div>
+
+				<div class="mt-4">
+					<div class="d-flex justify-content-center links">
+						Don't have an account? <a style="color:blue" href="{% url 'register' %}" class="ml-2">Sign Up</a>
+					</div>
+				</div>
+
+		</div>
+	</div>
+</div>
+<br><br>
+
+	<!-- Footer Start -->
+    <div class="footer ">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-4">
+                    <div class="footer-widget">
+                        <h2>Get in Touch </h2>
+                        <div class="contact-info">
+                            <p><i class="fa fa-map-marker"></i>123 Evento - EventManagement, Vijayawada, India</p>
+                            <p><i class="fa fa-envelope"></i>eventmanagement@gmail.com</p>
+                            <p><i class="fa fa-phone"></i>+91 12345 67890</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="footer-widget">
+                        <h2>Follow Us On</h2>
+                        <div class="contact-info">
+                            <div class="social">
+                                <a href=""><i class="fab fa-twitter"></i></a>
+                                <a href=""><i class="fab fa-facebook-f"></i></a>
+                                <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                                <a href=""><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="footer-widget">
+                        <h2>Website Info</h2>
+                        <ul>
+                            <li><a href="{% url 'aboutus' %}">About Us</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Condition</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="footer-widget">
+                        <h2>Events Gallery</h2>
+                        <ul>
+                            <li><a href="#">Wedding</a></li>
+                            <li><a href="#">Parties</a></li>
+                            <li><a href="#">Events</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    <!-- Footer Bottom Start -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="text-center">
+            	<div class="copyright " style="text-align: center;">
+                    <p>Copyright &copy; 2021, EVENTO pvt Limited. All Rights Reserved</p>
+                </div>
+
+                <div class=" mt-2 text-center">
+                      <div class="logo">
+                        <a href="index.html">
+                            <img src="{% static 'images/logo.png' %}" alt="EventManagement" height="70px" width="350px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Bottom End -->
+
+        <!-- Back to Top -->
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+        <script src="{% static 'lib/slick/slick.min.js' %}"></script>
+
+        <!-- Template Javascript -->
+        <script src="{% static 'js/main.js' %}"></script>
+
+<script>
+    setTimeout(function(){
+      if ($('#msg').length > 0) {
+        $('#msg').remove();
+      }
+    }, 3000)
+  </script>
+
+<script>
+  window.watsonAssistantChatOptions = {
+      integrationID: "084d75e5-905e-40f4-8215-0149bc0d0a2d", // The ID of this integration.
+      region: "us-south", // The region your integration is hosted in.
+      serviceInstanceID: "058f4d26-233c-41f0-8724-91c569320184", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+    document.head.appendChild(t);
+  });
+</script>
+
+</body>
+</html>

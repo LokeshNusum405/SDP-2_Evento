@@ -1,0 +1,326 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} More Events{% endblock %}
+{% block content %}
+
+
+
+  <!-- Main Slider Start -->
+    <div class="header">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="header-slider normal-slider">
+                        <div class="header-slider-item">
+                            <img src="{% static 'images/slider_1.jpg' %}" alt="Slider Image" height="550px" width="1400px"  />
+                            <div class="header-slider-caption">
+                                <a class="btn" href="{% url 'aboutus' %}"><i class="fa fa-address-card"></i>About Us</a>
+                            </div>
+                        </div>
+                        <div class="header-slider-item">
+                            <img src="{% static 'images/slider_2.jpg' %}" alt="Slider Image" height="550px" width="1400px" />
+                            <div class="header-slider-caption">
+                                <a class="btn" href="{% url 'aboutus' %}"><i class="fa fa-address-card"></i>About Us</a>
+                            </div>
+                        </div>
+                        <div class="header-slider-item">
+                            <img src="{% static 'images/slider_3.jpg' %}" alt="Slider Image" height="550px" width="1400px" />
+                            <div class="header-slider-caption">
+                                <a class="btn" href="{% url 'aboutus' %}"><i class="fa fa-address-card"></i>About Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Main Slider End -->
+<!-- Featured Product Start -->
+    <div class="featured-product product">
+        <div class="container-fluid">
+            <div class="section-header">
+                <h1>Occasions</h1>
+            </div>
+            <div class="row align-items-center product-slider product-slider-4">
+                <div class="col-lg-9">
+                    <div class="product-item">
+                        <div class="product-title">
+                            <a href="{% url 'bookevent' %}">Wedding</a>
+                        </div>
+                        <div class="product-image">
+                            <a href="login.html">
+                                <img src="{% static 'images/wedding.jpg' %}" alt="Product Image" height="250px" >
+                            </a>
+                            <div class="product-action">
+                                <a href="login.html"><i class="fas fa-images"></i></a>
+                                <a href="login.html"><i class="fa fa-eye"></i></a>
+                                <a href="login.html"><i class="fa fa-search"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-price">
+                            <h3><span> </span></h3>
+                            <a class="btn" style="border:1px solid black" href="{% url 'bookevent' %}"><i class="fas fa-book"></i>Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-9">
+                    <div class="product-item">
+                        <div class="product-title">
+                            <a href="{% url 'bookevent' %}">Engagement</a>
+                        </div>
+                        <div class="product-image">
+                            <a href="login.html">
+                                <img src="{% static 'images/engagement.jpg' %}" alt="Product Image" height="250px" >
+                            </a>
+                            <div class="product-action">
+                                <a href="login.html"><i class="fas fa-images"></i></a>
+                                <a href="login.html"><i class="fa fa-eye"></i></a>
+                                <a href="login.html"><i class="fa fa-search"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-price">
+                            <h3><span> </span></h3>
+                            <a class="btn" href="{% url 'bookevent' %}"><i class="fas fa-book"></i>Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="product-item">
+                        <div class="product-title">
+                            <a href="{% url 'bookevent' %}">Reception</a>
+                        </div>
+                        <div class="product-image">
+                            <a href="login.html">
+                                <img src="{% static 'images/reception.jpg' %}" alt="Product Image" height="250px" >
+                            </a>
+                            <div class="product-action">
+                                <a href="login.html"><i class="fas fa-images"></i></a>
+                                <a href="login.html"><i class="fa fa-eye"></i></a>
+                                <a href="login.html"><i class="fa fa-search"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-price">
+                            <h3><span> </span></h3>
+                            <a class="btn" href="{% url 'bookevent' %}"><i class="fas fa-book"></i>Book Now</a>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
+    <!-- Featured Product End -->
+
+ <!-- Parties -->
+    <div class="featured-product product">
+        <div class="container-fluid">
+            <div class="section-header">
+                <h1>Parites</h1>
+            </div>
+            <div class="row align-items-center product-slider product-slider-4">
+                <div class="col-lg-9">
+                    <div class="product-item">
+                        <div class="product-title">
+                            <a href="{% url 'bookevent' %}">Birthday</a>
+                        </div>
+                        <div class="product-image">
+                            <a href="login.html">
+                                <img src="{% static 'images/birthday.jpg' %}" alt="Product Image" height="250px" >
+                            </a>
+                            <div class="product-action">
+                                <a href="login.html"><i class="fas fa-images"></i></a>
+                                <a href="login.html"><i class="fa fa-eye"></i></a>
+                                <a href="login.html"><i class="fa fa-search"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-price">
+                            <h3><span> </span></h3>
+                            <a class="btn" href="{% url 'bookevent' %}"><i class="fas fa-book"></i>Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-9">
+                    <div class="product-item">
+                        <div class="product-title">
+                            <a href="{% url 'bookevent' %}">Bachelor</a>
+                        </div>
+                        <div class="product-image">
+                            <a href="login.html">
+                                <img src="{% static 'images/bachelor.jpg' %}" alt="Product Image" height="250px" >
+                            </a>
+                            <div class="product-action">
+                                <a href="login.html"><i class="fas fa-images"></i></a>
+                                <a href="login.html"><i class="fa fa-eye"></i></a>
+                                <a href="login.html"><i class="fa fa-search"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-price">
+                            <h3><span> </span></h3>
+                            <a class="btn" href="{% url 'bookevent' %}"><i class="fas fa-book"></i>Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="product-item">
+                        <div class="product-title">
+                            <a href="{% url 'bookevent' %}">Private</a>
+                        </div>
+                        <div class="product-image">
+                            <a href="login.html">
+                                <img src="{% static 'images/private.jpg' %}" alt="Product Image" height="250px" >
+                            </a>
+                            <div class="product-action">
+                                <a href="login.html"><i class="fas fa-images"></i></a>
+                                <a href="login.html"><i class="fa fa-eye"></i></a>
+                                <a href="login.html"><i class="fa fa-search"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-price">
+                            <h3><span> </span></h3>
+                            <a class="btn" href="{% url 'bookevent' %}"><i class="fas fa-book"></i>Book Now</a>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
+    <!-- Parties End -->
+
+  <!-- Functions -->
+    <div class="featured-product product">
+        <div class="container-fluid">
+            <div class="section-header">
+                <h1>Functions</h1>
+            </div>
+            <div class="row align-items-center product-slider product-slider-4">
+                <div class="col-lg-9">
+                    <div class="product-item">
+                        <div class="product-title">
+                            <a href="{% url 'bookevent' %}">HalfSaree</a>
+                        </div>
+                        <div class="product-image">
+                            <a href="login.html">
+                                <img src="{% static 'images/halfsaree.jpg' %}" alt="Product Image" height="250px" >
+                            </a>
+                            <div class="product-action">
+                                <a href="login.html"><i class="fas fa-images"></i></a>
+                                <a href="login.html"><i class="fa fa-eye"></i></a>
+                                <a href="login.html"><i class="fas fa-book"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-price">
+                            <h3><span> </span></h3>
+                            <a class="btn" href="{% url 'bookevent' %}"><i class="fas fa-book"></i>Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-9">
+                    <div class="product-item">
+                        <div class="product-title">
+                            <a href="{% url 'bookevent' %}">Dhothi</a>
+                        </div>
+                        <div class="product-image">
+                            <a href="login.html">
+                                <img src="{% static 'images/dhothi.jpg' %}" alt="Product Image" height="250px" >
+                            </a>
+                            <div class="product-action">
+                                <a href="login.html"><i class="fas fa-images"></i></a>
+                                <a href="login.html"><i class="fa fa-eye"></i></a>
+                                <a href="login.html"><i class="fa fa-search"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-price">
+                            <h3><span> </span></h3>
+                            <a class="btn" href="{% url 'bookevent' %}"><i class="fas fa-book"></i>Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="product-item">
+                        <div class="product-title">
+                            <a href="{% url 'bookevent' %}">Shasti Poorthi</a>
+                        </div>
+                        <div class="product-image">
+                            <a href="login.html">
+                                <img src="{% static 'images/shastipoorthi.jpg' %}" alt="Product Image" height="250px" >
+                            </a>
+                            <div class="product-action">
+                                <a href="login.html"><i class="fas fa-images"></i></a>
+                                <a href="login.html"><i class="fa fa-eye"></i></a>
+                                <a href="login.html"><i class="fa fa-search"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-price">
+                            <h3><span> </span></h3>
+                            <a class="btn" href="{% url 'bookevent' %}"><i class="fas fa-book"></i>Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Parties End -->
+
+
+<!-- Others -->
+    <div class="featured-product product">
+        <div class="container-fluid">
+            <div class="section-header">
+                <h1>Others</h1>
+            </div>
+            <div class="row align-items-center product-slider product-slider-4">
+                <div class="col-lg-9">
+                    <div class="product-item">
+                        <div class="product-title">
+                            <a href="{% url 'bookevent' %}">House Warming</a>
+                        </div>
+                        <div class="product-image">
+                            <a href="login.html">
+                                <img src="{% static 'images/housewarming.jpg' %}" alt="Product Image" height="250px" >
+                            </a>
+                            <div class="product-action">
+                                <a href="login.html"><i class="fas fa-images"></i></a>
+                                <a href="login.html"><i class="fa fa-eye"></i></a>
+                                <a href="login.html"><i class="fa fa-search"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-price">
+                            <h3><span> </span></h3>
+                            <a class="btn" href="{% url 'bookevent' %}"><i class="fas fa-book"></i>Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-9">
+                    <div class="product-item">
+                        <div class="product-title">
+                            <a href="{% url 'bookevent' %}">Get Together</a>
+                        </div>
+                        <div class="product-image">
+                            <a href="login.html">
+                                <img src="{% static 'images/gettogether.jpg' %}" alt="Product Image" height="250px" >
+                            </a>
+                            <div class="product-action">
+                                <a href="login.html"><i class="fas fa-images"></i></a>
+                                <a href="login.html"><i class="fa fa-eye"></i></a>
+                                <a href="login.html"><i class="fa fa-search"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-price">
+                            <h3><span> </span></h3>
+                            <a class="btn" href="{% url 'bookevent' %}"><i class="fas fa-book"></i>Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Parties End -->
+
+
+{% endblock %}

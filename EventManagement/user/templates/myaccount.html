@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} My Account{% endblock %}
+{% block content %}
+<script type="text/javascript">
+	function passwordValidation(){
+		var pwd = document.getElementById("pwd").value;
+		var npwd = document.getElementById("npwd").value;
+		var cpwd = document.getElementById("cpwd").value;
+
+		if(pwd.length==0){
+			document.getElementById('alert').innerHTML = "Enter Password"
+			document.getElementById("alert").classList.add('alert-warning');
+			document.getElementById('alert').removeAttribute("style");
+			return false;
+		}
+		else if(npwd.length==0){
+			document.getElementById('alert').innerHTML = "Enter New Password"
+			document.getElementById("alert").classList.add('alert-warning');
+			document.getElementById('alert').removeAttribute("style");
+			return false;
+		}
+		else if(cpwd.length==0){
+			document.getElementById('alert').innerHTML = "Enter Confirm New Password"
+			document.getElementById("alert").classList.add('alert-warning');
+			document.getElementById('alert').removeAttribute("style");
+			return false;
+		}
+		else if(npwd.localeCompare(cpwd) !== 0){
+			document.getElementById('alert').innerHTML = "Confirm Password and New Password Matches"
+			document.getElementById("alert").classList.add('alert-warning');
+			document.getElementById('alert').removeAttribute("style");
+			return false;
+		}
+		return true;
+	}
+</script>
+
+ <!-- Breadcrumb Start -->
+        <div class="breadcrumb-wrap">
+            <div class="container-fluid">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'moreevents' %}">Events</a></li>
+                    <li class="breadcrumb-item active">My Account</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Breadcrumb End -->
+
+<div class="topcorner" style="position:absolute; top:80px;right:0;">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert  {{ message.tags }} m-2" id="msg" role="alert" >
+                            <center>{{ message }}</center>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+        </div>
+        <!-- My Account Start -->
+        <div class="my-account">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="tab-content">
+
+                                <div class="tab-pane fade show active" id="account-tab" role="tabpanel" aria-labelledby="account-nav">
+	                                <h4>Account Details</h4>
+
+	                                <form action="updateaccount.jsp" method="post">
+                                        {% csrf_token %}
+                                        <div class="row">
+                                            <div class="col-md-6 ">
+                                                <input class="form-control" type="text" name="fname" value="{{username}}" readonly placeholder="Enter First Name">
+                                            </div>
+                                            <div class="col-md-6 ">
+                                                <input class="form-control" type="text" name="lname" placeholder="Enter Last Name">
+                                            </div>
+
+
+                                            <div class="col-md-6 ">
+                                                <input class="form-control" type="text" name="email" value="{{email}}" placeholder="Enter Email" >
+                                            </div>
+                                            <div class="col-md-6 ">
+                                                <input class="form-control" type="text" name="mobile" placeholder="Enter Mobile  ">
+                                            </div>
+                                            <div class="col-md-12 ">
+                                                <input class="form-control" type="textarea" name="Address" placeholder="Enter Address">
+                                            </div>
+                                            <div class="col-md-12">
+		                                        <button type="submit" class="btn">Update Account</button>
+		                                        <br><br>
+		                                    </div>
+                                        </div>
+	                                </form>
+	                           </div>
+
+                        </div>
+                    </div>
+
+                     <div class="col-md-6">
+                     	<div class="tab-content">
+                            <h4>Password change</h4>
+                            <div id="alert" style="display:None;" class="alert" role="alert">
+		  	   				</div>
+                                <form action="changepassword.jsp" method="post" onsubmit="return passwordValidation()">
+                                	<div class="row">
+	                                    <div class="col-md-12">
+	                                        <input class="form-control" id="pwd" type="password" name="pwd" placeholder="Current Password">
+	                                    </div>
+	                                    <div class="col-md-6">
+	                                        <input class="form-control" type="text" id="npwd" name="npwd" placeholder="New Password">
+	                                    </div>
+	                                    <div class="col-md-6">
+	                                        <input class="form-control" type="text" name="cpwd" id="cpwd" placeholder="Confirm Password">
+	                                    </div>
+	                                    <div class="col-md-12">
+	                                        <button type="submit" class="btn">Update Password</button>
+	                                    </div>
+	                                </div>
+                                </form>
+                            </div>
+                   	</div>
+                </div>
+            </div>
+        </div>
+        <!-- My Account End -->
+
+
+
+{% endblock %}

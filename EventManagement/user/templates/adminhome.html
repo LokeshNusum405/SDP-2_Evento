@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Admin Home{% endblock %}
+{% block content %}
+<!-- Breadcrumb Start -->
+        <div class="breadcrumb-wrap">
+            <div class="container-fluid">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item active">Home</li>
+                    <li class="breadcrumb-item"><a href="{% url 'moreevents' %}">Events</a></li>
+
+                </ul>
+            </div>
+        </div>
+        <!-- Breadcrumb End -->
+
+<div class="topcorner" style="position:absolute; top:80px;right:0;">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert  {{ message.tags }} m-2" id="msg" role="alert" >
+                            <center>{{ message }}</center>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+        </div>
+
+     <!-- Wishlist Start -->
+        <div class="wishlist-page">
+            <div class="container-fluid">
+                <h2>Number of Booked Events = {{count}}</h2>
+                <div class="wishlist-page-inner">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>Username</th>
+                                            <th>Event Name</th>
+                                            <th>Email</th>
+                                            <th>Event Date</th>
+                                            <th>Mobile</th>
+                                            <th>Alt Mobile</th>
+                                            <th>Effordable Amount</th>
+                                            <th>Description</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="align-middle">
+                                        {% for bookedevent in bookedevents %}
+                                        				<tr>
+				                                            <td><p>{{bookedevent.name}}</p></td>
+				                                            <td>{{bookedevent.eventname}}</td>
+				                                            <td>{{bookedevent.email}}</td>
+				                                            <td>{{bookedevent.date}}</td>
+				                                            <td>{{bookedevent.mobile}}</td>
+				                                            <td>{{bookedevent.altmobile}}</td>
+				                                            <td>{{bookedevent.amount}}</td>
+				                                            <td>{{bookedevent.description}}</td>
+                                                            <td><a class="btn" href="/updateevent/{{bookedevent.name}}/{{bookedevent.eventname}}"><button><i class="fa fa-edit"></i></button></a></td>
+				                                            <td><a class="btn" href="/deleteevent/{{bookedevent.name}}/{{bookedevent.eventname}}"><button><i class="fa fa-trash"></i></button></a></td>
+				                                        </tr>
+                                        {% endfor %}
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Wishlist End -->
+
+{% endblock %}

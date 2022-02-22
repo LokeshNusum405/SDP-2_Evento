@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} book event {% endblock %}
+
+{% block content %}
+<div class="topcorner" style="position:absolute; top:80px;right:0;">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert  {{ message.tags }} m-2" id="msg" role="alert" >
+                            <center>{{ message }}</center>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+        </div>
+
+<div class="container tm-mt-big tm-mb-big center">
+    <div class="row">
+      <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
+        <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+
+                    <div class="row">
+                        <div class="col-12" >
+                            <center><h2 class="tm-block-title d-inline-block">Event Booking</h2></center>
+                        </div>
+                    </div>
+
+                  <div class="row tm-edit-product-row">
+                    <div class=" col-xl-6 col-lg-6 col-md-12">
+                                <form  class="tm-edit-product-form" method="post" >
+                                    {% csrf_token %}
+                                    <div class="form-group mb-3">
+                                      <label for="name">Enter Full Name</label>
+                                      <input id="name" name="name" type="text"  value="{{username}}" class="form-control validate" required />
+                                    </div>
+                                      <div class="form-group mb-3">
+                                          <label for="eventname">Event Name</label>
+                                          <input id="eventname" name="eventname" type="text" class="form-control validate" required />
+                                      </div>
+
+                                      <div class="form-group mb-3">
+                                          <label for="email">Enter Email</label>
+                                          <input id="email" name="email" type="email" value="{{email}}" class="form-control validate" required />
+                                      </div>
+
+                                      <div class="form-group mb-3">
+                                          <label for="date">Enter Event Date </label>
+                                          <input id="date" name="date" type="date" class="form-control validate" autocomplete="off" required />
+                                      </div>
+
+                                      <div class="form-group mb-3">
+                                          <label for="mobile">Enter Mobile Number</label>
+                                          <input id="mobile" name="mobile" type="text" class="form-control validate" required />
+                                      </div>
+
+                                      <div class="form-group mb-3">
+                                          <label for="altmobile">Enter Alternate Mobile Number</label>
+                                          <input id="altmobile" name="altmobile" type="text" class="form-control validate" required />
+                                      </div>
+
+                                    <div class="form-group mb-3">
+                                          <label for="amount">Enter Amount u can Efford</label>
+                                          <input id="amount" name="amount" type="text" class="form-control validate" required />
+                                      </div>
+
+                                    <div class="form-group mb-3">
+                                      <label for="description">Enter Description about Event</label>
+                                      <textarea name="description" id="description" class="form-control validate" rows="3" required></textarea>
+                                    </div>
+
+
+                                    <br>
+                                    <div class="col-12">
+                                      <button type="submit" class="btn btn-primary btn-block text-uppercase">Book Event</button>
+                                      <br><br>
+                                    </div>
+                            </form>
+
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
