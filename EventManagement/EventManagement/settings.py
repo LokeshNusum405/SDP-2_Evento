@@ -139,8 +139,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,'user/static')]
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'eventosdp2.486@gmail.com'
-EMAIL_HOST_PASSWORD = 'Eventosdp2@486'
+EMAIL_HOST_USER = 'evento@gmail.com'
+EMAIL_HOST_PASSWORD = 'Evento@123'
 
 
 
